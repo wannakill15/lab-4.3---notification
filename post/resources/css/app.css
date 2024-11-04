@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Main Wrapper */
+.notification-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Notification Bell */
+.notification.toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    position: relative;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    transition: background-color 0.2s;
+}
+
+.notification.toggle:hover {
+    background-color: #e2e8f0;
+}
+
+/* Badge for unread count */
+.notification .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4d4f;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Dropdown Container */
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.notification:hover .notification-dropdown {
+    display: block;
+}
+
+/* Dropdown Header */
+.notification-dropdown .notification.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #f9fafb;
+}
+
+.notification-dropdown .notification.header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.notification-dropdown .btn-sm {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    color: #fff;
+    background-color: #1d4ed8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.notification-dropdown .btn-sm:hover {
+    background-color: #1e40af;
+}
+
+/* Notification List */
+.notification-dropdown .notification.list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Notification Item */
+.notification-item {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.notification-item.unread {
+    background-color: #f1f5f9;
+}
+
+.notification-item:hover {
+    background-color: #e2e8f0;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #333;
+}
+
+.notification-content small {
+    display: block;
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 0.75rem;
+}
+
+/* No Notifications */
+.no-notification {
+    padding: 20px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
